@@ -8,7 +8,13 @@ pipeline {
         }
      stage('Test Code') {
             steps {
-                 echo "Test code"
+                 echo "Inside Test code stage "
+            }
+        }
+        
+        stage('Deliver Code') {
+            steps {
+                 echo "Inside Deliver code stage
             }
         }
     } 
