@@ -9,7 +9,8 @@ pipeline {
         }
      stage('Test Code') {
             steps {
-                echo "Inside Test code stage"
+                sh "chmod u+x Test.py"
+                sh "./testCode.py"
             }
         }
         
