@@ -1,0 +1,28 @@
+pipeline { 
+    agent any
+    stages {
+        stage('Build Code') {
+            steps {
+                chmod u+x srcCode.py
+                ./srcCode.py
+            }
+        }
+     stage('Test Code') {
+            steps {
+                echo "Inside Test code stage"
+            }
+        }
+        
+        stage('Deliver Code') {
+            steps {
+                 echo "Inside Deliver code stage"
+            }
+        }
+        
+        stage('Deploy Code') {
+            steps {
+                 echo "Inside Deploy code stage"
+            }
+        }
+    } 
+}
