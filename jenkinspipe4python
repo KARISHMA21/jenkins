@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Build Code') {
             steps {
-                chmod u+x srcCode.py
-                ./srcCode.py
+               sh "chmod u+x srcCode.py"
+               sh "./srcCode.py"
             }
         }
      stage('Test Code') {
