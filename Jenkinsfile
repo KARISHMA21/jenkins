@@ -14,7 +14,13 @@ pipeline {
         
         stage('Deliver Code') {
             steps {
-                 echo "Inside Deliver code stage
+                 echo "Inside Deliver code stage"
+            }
+        }
+        
+        stage('Deploy Code') {
+            steps {
+                 echo "Inside Deploy code stage"
             }
         }
     } 
