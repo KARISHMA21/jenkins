@@ -1,9 +1,20 @@
 pipeline { 
-    agent any
+   agent any
+
     stages {
-        stage('Build Code') {
+        stage('Git Pull') {
             steps {
-                echo "Inside Build code"
+                // Get code from a GitHub repository
+                // Make sure to add your own git url and credentialsId
+				git url: 'https://github.com/KARISHMA21/jenkins.git',
+				branch: 'main',
+//                 credentialsId: 'GitCredential'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                // Maven build, 'sh' specifies it is a shell command
+                sh 'mvn clean install'
             }
         }
      stage('Test Code') {
